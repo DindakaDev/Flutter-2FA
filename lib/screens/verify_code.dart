@@ -39,10 +39,12 @@ class _VerifyCodeState extends State<VerifyCode> {
   }
 
   validateCode() {
+    final date = DateTime.now();
     final code = codeController.text;
     final generatedCode = OTP.generateTOTPCodeString(
-        secKey, DateTime.now().millisecondsSinceEpoch,
-        algorithm: Algorithm.SHA1, isGoogle: true);
+        secKey, date.millisecondsSinceEpoch,
+        algorithm: Algorithm.SHA1,
+        isGoogle: true);
     if (code == generatedCode) {
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         backgroundColor: Colors.green,

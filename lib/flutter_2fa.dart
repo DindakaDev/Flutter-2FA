@@ -1,3 +1,5 @@
+library flutter_2fa;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_2fa/screens/generate_code.dart';
 import 'package:flutter_2fa/screens/verify_code.dart';
